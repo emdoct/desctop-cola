@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+
+        position: relative;
+      }
+
+      #image {
+        width: calc(880 / 1920 * 100vh);
+        height: calc(748 / 1920 * 100vh);
+      }
+
+      #image.dragging {
+        z-index: 1000;
+        pointer-events: none;
+      }
+
+      #icon {
+        width: calc(100 / 1920 * 100vh);
+        pointer-events: none;
+        user-select: none;
+
+        position: absolute;
+        top: 0;
+        left: calc(-200 / 1920 * 100vh);
+      }
+
+      #red,
+      #black {
+        transition: transform 250ms ease;
+        user-select: none;
+        width: calc(465 / 1920 * 100vh);
+        height: calc(550 / 1920 * 100vh);
+
+        object-fit: cover;
+        object-position: center;
+      }
+
+      #red.hovered,
+      #black.hovered {
+        transform: scale(1.25);
+      }
+
+      #image {
+        margin: calc(80 / 1920 * 100vh) 0;
+        height: calc(720 / 1920 * 100vh);
+        object-fit: contain;
+      }
+
+      #column {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        height: 100%;
+      }
+
+      #row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+
+  <body class="gameBody">
+    <div id="column">
+      <h1>
+        НА ПЕРЕРАБОТКУ <br />
+        ИЛИ В МУСОР?
+        <img onerror="this.style.display='none'" id="icon" height="auto" />
+      </h1>
+      <img id="image" width="auto" />
+      <div id="row">
+        <img id="red" src="images/red.png" />
+        <img id="black" src="images/black.png" />
+      </div>
+    </div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      let img = document.getElementById("image");
+      let hovered = undefined;
+      let shiftX = 0;
+      let shiftY = 0;
+      img.src = `data/${params.get("level")}/${params.get("stage")}/image.png`;
+
+      let icon = document.getElementById("icon");
+      icon.src = `data/${params.get("level")}/${params.get("stage")}/icon.png`;
+
+      let red = document.getElementById("red");
+      let black = document.getElementById("black");
+
+      img.ondragstart = function () {
+        return false;
+      };
+
+      function ease(timeFraction) {
+        if (timeFraction < 0.5) return (2 * timeFraction) / 2;
+        else return (2 - 2 * (1 - timeFraction)) / 2;
+      }
+
+      function animate({ timing, draw, duration }) {
+        let start = performance.now();
+
+        requestAnimationFrame(function animate(time) {
+          let timeFraction = (time - start) / duration;
+          if (timeFraction > 1) timeFraction = 1;
+
+          let progress = timing(timeFraction);
+
+          draw(progress);
+
+          if (timeFraction < 1) {
+            requestAnimationFrame(animate);
+          }
+        });
+      }
+
+      function draw(progress) {
+        img.style.setProperty("--scale", 1 - 0.5 * progress);
+      }
+
+      function moveAt(e) {
+        x = e.touches[0].pageX - shiftX + "px";
+        y = e.touches[0].pageY - shiftY + "px";
+
+        img.style.transform = `translate3d(${x}, ${y}, 0) scale(var(--scale))`;
+
+        let el = document.elementFromPoint(
+          e.touches[0].pageX,
+          e.touches[0].pageY
+        );
+
+        if (el != hovered) {
+          if (hovered != undefined) {
+            hovered.classList.remove("hovered");
+          }
+          hovered = el;
+          if (el != undefined) {
+            el.classList.add("hovered");
+          }
+        }
+      }
+
+      function moveAt2(e) {
+        x = e.pageX - shiftX + "px";
+        y = e.pageY - shiftY + "px";
+
+        img.style.transform = `translate3d(${x}, ${y}, 0) scale(var(--scale))`;
+
+        let el = document.elementFromPoint(e.pageX, e.pageY);
+
+        if (el != hovered) {
+          if (hovered != undefined) {
+            hovered.classList.remove("hovered");
+          }
+          hovered = el;
+          if (el != undefined) {
+            el.classList.add("hovered");
+          }
+        }
+      }
+
+      function drop(e) {
+        document.removeEventListener("touchmove", moveAt);
+        document.removeEventListener("mousemove", moveAt2);
+        document.removeEventListener("mouseup", drop);
+
+        img.classList.remove("dragging");
+
+        let isDropped = false;
+        let isRecyclable = false;
+
+        if (hovered == red) {
+          isDropped = true;
+          isRecyclable = true;
+        }
+
+        if (hovered == black) {
+          isDropped = true;
+          isRecyclable = false;
+        }
+
+        if (isDropped) {
+          img.style.transform = "scale(0)";
+          parent.postMessage({
+            type: "dropped",
+            isCorrect: isRecyclable.toString() == params.get("rec"),
+          });
+        } else {
+          img.style.transform = ``;
+        }
+      }
+
+      img.addEventListener("mousedown", (e) => {
+        shiftX = e.pageX;
+        shiftY = e.pageY;
+
+        scale = 1;
+        animate({
+          duration: 250,
+          timing: ease,
+          draw,
+        });
+
+        moveAt2(e);
+        document.addEventListener("mousemove", moveAt2, { passive: true });
+        document.addEventListener("mouseup", drop, { passive: true });
+        img.classList.add("dragging");
+      });
+
+      img.addEventListener("touchstart", (e) => {
+        shiftX = e.touches[0].pageX;
+        shiftY = e.touches[0].pageY;
+
+        scale = 1;
+        animate({
+          duration: 250,
+          timing: ease,
+          draw,
+        });
+
+        moveAt(e);
+        document.addEventListener("touchmove", moveAt, { passive: true });
+        img.classList.add("dragging");
+      });
+
+      img.addEventListener("touchend", (e) => {
+        drop();
+      });
+
+      img.addEventListener("touchcancel", (e) => {
+        drop();
+      });
+    </script>
+  </body>
+</html>

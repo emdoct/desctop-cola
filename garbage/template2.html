@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      h6 {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calc(45 / 1920 * 100vh);
+        line-height: calc(50 / 1920 * 100vh);
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+
+        margin-bottom: calc(45 / 1920 * 100vh);
+      }
+
+      p#name {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: bold;
+        font-size: calc(55 / 1920 * 100vh);
+        line-height: calc(61 / 1920 * 100vh);
+        text-align: center;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 0 calc(100 / 1920 * 100vh);
+
+        margin-bottom: calc(28 / 1920 * 100vh);
+      }
+
+      div#info {
+        width: calc(870 / 1920 * 100vh);
+        height: calc(244 / 1920 * 100vh);
+
+        background: #a0a0a0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        color: #ffffff;
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        text-align: center;
+
+        margin-bottom: calc(68 / 1920 * 100vh);
+      }
+
+      div#info.recyclable {
+        background: #5dce4e;
+      }
+
+      #text2 > p {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calc(45 / 1920 * 100vh);
+        line-height: calc(50 / 1920 * 100vh);
+        /* or 111% */
+
+        text-align: center;
+
+        color: #000000;
+      }
+
+      #text2 {
+        width: calc(870 / 1920 * 100vh);
+      }
+
+      #logo {
+        width: calc(263 / 1920 * 100vh);
+        height: calc(428 / 1920 * 100vh);
+        user-select: none;
+        pointer-events: none;
+
+        filter: brightness(0) invert(71%) sepia(0%) saturate(1145%)
+          hue-rotate(138deg) brightness(92%) contrast(87%);
+      }
+
+      #logo.recyclable {
+        filter: brightness(0) saturate(100%) invert(71%) sepia(82%)
+          saturate(397%) hue-rotate(58deg) brightness(88%) contrast(86%);
+      }
+
+      #column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body class="gameBody">
+    <div id="column">
+      <h6>На переработку или в мусор?</h6>
+      <p id="name"></p>
+      <div id="info"></div>
+      <div id="text2"></div>
+      <img src="images/logo.png" id="logo" />
+      <button onclick="parent.postMessage({ type: 'next' })">Далее</button>
+    </div>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      fetch("data/levels.json")
+        .then((res) => res.json())
+        .then((levelsInfo) => {
+          const level = params.get("level");
+          const stage = params.get("stage");
+
+          const info = levelsInfo[level][stage];
+
+          if (info.recyclable) {
+            document.getElementById("info").classList.add("recyclable");
+            document.getElementById("logo").classList.add("recyclable");
+          }
+
+          document.getElementById("name").innerHTML = info.name;
+          document.getElementById("info").innerHTML = info.text;
+          document.getElementById("text2").innerHTML = info.text2;
+        });
+    </script>
+  </body>
+</html>

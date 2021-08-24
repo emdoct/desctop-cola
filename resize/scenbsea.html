@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../stylelow.css?v=5">
+	
+	<script src="../js/jquery.min.js" ></script>
+	<script src="../js/script.js" defer=""></script>
+	<title>Интерактивная игра Coca-Cola</title>
+</head>
+<body>
+
+	<header class="header">
+
+		<div class="top-menu">
+			<div class="menu-btn">
+				<a href="#" class="menu-botton"></a>
+			</div>
+		</div>
+	</header>
+
+	<div id="popup" class="pop-up hidden opacity">
+		<div class="pop-up__container">
+			<!-- <a href="#" class="pop-up__cross"></a> -->
+			<div class="pop-up__text">
+				<h3>Выйти на главный экран ?</h3>
+			</div>
+			<div class="pop-up__menu">
+				<a href="../index.html">Да</a>
+				<a id="pop-up__no" href="#">Нет</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="first-screen hidden opacity">
+		<div class="bg-pick  first">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+		<div class="end-top__text">
+			<h1>Правильных ответов</h1>
+			<h3><span id="fin-result"></span> из <span id="fin-result__all"></span></h3>
+		</div>
+
+		<div class="down-text">
+				 <a href="scenmenu.html">вернуться в меню</a>
+		</div>
+	</div>
+	
+	<div class="fo-screen">
+		<div class="bg-pick fo">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+			<div class="game-top__text ">
+				<h3>Идём на пляж</h3>
+				<p class="qnumber"> вопрос <span class="qnumberCount">1</span> из <span class="all-question"></span></p>
+				
+			</div>
+
+			<div id="1" class="question-btn" >
+				<p class="question-text">Вы собираетесь на пляж. На чём будете добираться?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step1-1" name="qblock1" value="true">
+				    <label for="step1-1"><p>Пойду пешком или поеду на велосипеде</p></label>
+				 </div>
+				 	<p id="help1" class="question-help hidden">Вы могли бы поехать на велосипеде и сократить свой углеродный след</p>
+				 	<p id="help-pos1" class="question-help hidden">Отлично! Это не только экологичнее всего, но и здорово для вашего здоровья!</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step1-2" name="qblock1" value="false">
+				    <label for="step1-2"><p>Доеду на машине или такси</p></label>
+				  </div>
+
+			</div>
+
+			<div id="2" class="question-btn hidden opacity" >
+				<p class="question-text ">По пути на пляж вы зашли в кафе, чтобы взять с собой что-то перекусить. В какой таре возьмёте еду?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step2-1" name="qblock2" value="true">
+				    <label class="small-text" for="step2-1"><p>У меня с собой многоразовый контейнер - попрошу положить еду в него</p></label>
+				 </div>
+				 	<p id="help2" class="question-help hidden">Это удобнее, но лучше взять с собой еду в многоразовом контейнере, чтобы не создавать отходы упаковки</p>
+				 	<p id="help-pos2" class="question-help hidden">Это экологичный выбор — будет меньше лишней упаковки, которую скорее всего будет сложно сдать на переработку</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step2-2" name="qblock2" value="false">
+				    <label for="step2-2"><p>Возьму еду в одноразовой упаковке</p></label>
+				  </div>
+
+			</div>
+
+			<div id="3" class="question-btn hidden opacity" >
+				<p  class="question-text">На пляже вы обнаружили, что забыли солнцезащитный крем. К счастью, рядом есть магазин с большим выбором кремов. Какой выберете?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step3-1" name="qblock3" value="false">
+				    <label for="step3-1"><p>Любого известного бренда</p></label>
+				 </div>
+				 	<p id="help3" class="question-help hidden">Химические вещества в большинстве солнцезащитных кремов способствуют разрушению коралловых рифов. Лучше выбрать крем на минеральной основе (об этом обычно написано на упаковке)</p>
+				 	<p id="help-pos3" class="question-help hidden">О том, что крем на минеральной основе, обычно написано на упаковке. Такие крема не содержат ингредиентов, разрушающих коралловые рифы.</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step3-2" name="qblock3" value="true">
+				    <label for="step3-2"><p>Выберу крем на минеральной основе</p></label>
+				  </div>
+
+			</div>
+
+			<div id="4" class="question-btn hidden opacity" >
+				<p class="question-text">Как насчёт того, чтобы построить «замок» из гальки на пляже?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step4-1" name="qblock4" value="false">
+				    <label for="step4-1"><p>Отличная идея</p></label>
+				 </div>
+				 	<p id="help4" class="question-help hidden">Вы можете побеспокоить мелких животных, которые живут под камнями на пляже</p>
+				 	<p id="help-pos4" class="question-help hidden">Так вы не побеспокоите мелких животных, которые живут под камнями на пляже</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step4-2" name="qblock4" value="true">
+				    <label for="step4-2"><p>Не буду этого делать</p></label>
+				  </div>
+
+			</div>
+
+			<div id="5" class="question-btn hidden opacity" >
+				<p class="question-text">Выходя из моря, вы увидели краба. Возьмёте его в руки?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step5-1" name="qblock5" value="false">
+				    <label for="step5-1"><p>Возьму</p></label>
+				 </div>
+				 	<p id="help5" class="question-help hidden">Не стоит беспокоить морских обитателей и вынимать их из воды</p>
+				 	<p id="help-pos5" class="question-help hidden">Это правильный выбор — за морскими животными лучше наблюдать со стороны</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step5-2" name="qblock5" value="true">
+				    <label for="step5-2"><p>Нет</p></label>
+				  </div>
+
+			</div>
+
+			<div id="6" class="question-btn hidden opacity" >
+				<p class="question-text">После купания вы решили смыть с себя солёную воду в пляжном душе. Воспользуетесь шампунем?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step6-1" name="qblock6" value="false">
+				    <label for="step6-1"><p>Да</p></label>
+				 </div>
+				 	<p id="help6" class="question-help hidden">Вода из пляжных душевых обычно не фильтруется перед попаданием в водоём. Химические вещества в вашем шампуне загрязняют морскую воду, поэтому лучше обойтись без него</p>
+				 	<p id="help-pos6" class="question-help hidden">Для того, чтобы смыть соль с тела, достаточно ополоснуться под проточной водой без очищающих средств. Вода из пляжных душевых обычно не фильтруется перед попаданием в водоём</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step6-2" name="qblock6" value="true">
+				    <label for="step6-2"><p>Нет</p></label>
+				  </div>
+
+			</div>
+
+			<div id="7" class="question-btn hidden opacity" >
+				<p class="question-text">Приближается полдень, и вам захотелось пить. Вы купили напиток в алюминиевой банке в кафе у пляжа, и бармен предложил вам пластиковую трубочку. Как поступите?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step7-1" name="qblock7" value="false">
+				    <label for="step7-1"><p>Возьму трубочку</p></label>
+				 </div>
+				 	<p id="help7" class="question-help hidden">Лучше отказаться: трубочки не перерабатываются и могут попасть в океан, где навредят морским обитателям</p>
+				 	<p id="help-pos7" class="question-help hidden">Так намного лучше! Трубочки не перерабатываются и могут попасть в океан, где навредят морским обитателям</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step7-2" name="qblock7" value="true">
+				    <label for="step7-2"><p>Откажусь</p></label>
+				  </div>
+
+			</div>
+
+			<div id="8" class="question-btn hidden opacity" >
+				<p class="question-text">Куда выбросите пустую банку от напитка?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step8-1" name="qblock8" value="true">
+				    <label for="step8-1"><p>В контейнер для полезных отходов</p></label>
+				 </div>
+				 	<p id="help8" class="question-help hidden">Неверно! Алюминий — ценный ресурс, который принимают на переработку почти везде</p>
+				 	<p id="help-pos8" class="question-help hidden">Здорово! Алюминий — ценный ресурс, который принимают на переработку почти везде</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step8-2" name="qblock8" value="false">
+				    <label class="" for="step8-2"><p>В контейнер для прочих отходов</p></label>
+				  </div>
+
+			</div>
+
+			<div id="9" class="question-btn hidden opacity" >
+				<p class="question-text">Соберёте немного ракушек, чтобы взять их с собой?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step9-1" name="qblock9" value="false">
+				    <label class="" for="step9-1"><p>Да</p></label>
+				 </div>
+				 	<p id="help9" class="question-help hidden">Ракушки важны для пляжей, они служат домом и укрытием для животных. Вместо того, чтобы брать ракушки на память, сфотографируйте их</p>
+				 	<p id="help-pos9" class="question-help hidden">Это хорошее решение! Ракушки важны для пляжей, они служат домом и укрытием для животных. Вместо того, чтобы брать ракушки на память, сфотографируйте их</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step9-2" name="qblock9" value="true">
+				    <label for="step9-2"><p>Нет</p></label>
+				  </div>
+
+			</div>
+
+			<div id="10" class="question-btn hidden opacity" >
+				<p class="question-text">Уходя с пляжа, вы увидели стаю чаек на пирсе. У вас как раз осталась булочка. Покормите птиц?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step10-1" name="qblock10" value="false">
+				    <label class="" for="step10-1"><p>Да, все это делают</p></label>
+				 </div>
+				 	<p id="help10" class="question-help hidden">Такая еда непривычна для птиц и может вызвать заболевания и даже привести к гибели птицы</p>
+				 	<p id="help-pos10" class="question-help hidden">Очень мудро! Такая еда непривычна для птиц и может вызвать заболевание и даже привести к гибели птицы</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step10-2" name="qblock10" value="true">
+				    <label for="step10-2"><p>Не буду кормить чаек</p></label>
+				  </div>
+
+			</div>
+
+
+
+			<div class="game-panel">
+				<div class="game-btn">
+					<img class="game-arrow" src="../img/games-img/gamecircl.png" alt="оложительный круг">
+					<img class="face-icon" src="../img/games-img/good-face.png" alt="Лицо">
+				</div>
+
+				<a class="next-btn" href="#" >далее</a>
+			</div>
+
+		
+	</div>
+</body>
+</html>

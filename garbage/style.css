@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url(fonts/Comfortaa-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url(fonts/Comfortaa-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+body {
+  border: calc(46 / 1920 * 100vh) solid #e41e2b;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+#home {
+  width: calc(230 / 1920 * 100vh);
+  height: calc(199 / 1920 * 100vh);
+
+  position: absolute;
+  left: 50%;
+  top: calc(-15 / 1920 * 100vh);
+  transform: translateX(-50%);
+}
+
+.gameBody {
+  border: none;
+}
+
+h1 {
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(55 / 1920 * 100vh);
+  line-height: calc(61 / 1920 * 100vh);
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  user-select: none;
+}
+
+img {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+button {
+  width: calc(406.31 / 1920 * 100vh);
+  height: calc(152 / 1920 * 100vh);
+  background: url(images/btn.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+
+  font-family: Comfortaa;
+  font-style: normal;
+  font-weight: normal;
+  font-size: calc(40 / 1920 * 100vh);
+  line-height: calc(45 / 1920 * 100vh);
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  -webkit-tap-highlight-color: transparent;
+
+  border: none;
+
+  align-items: center;
+  justify-content: center;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-image: url(images/btn-hover.png);
+}

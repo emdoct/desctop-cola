@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../stylelow.css?v=5">
+	
+	<script src="../js/jquery.min.js" ></script>
+	<script src="../js/script.js" defer=""></script>
+	<title>Интерактивная игра Coca-Cola</title>
+</head>
+<body>
+
+	<header class="header">
+
+		<div class="top-menu">
+			<div class="menu-btn">
+				<a href="#" class="menu-botton"></a>
+			</div>
+		</div>
+	</header>
+
+	<div id="popup" class="pop-up hidden opacity">
+		<div class="pop-up__container">
+			<!-- <a href="#" class="pop-up__cross"></a> -->
+			<div class="pop-up__text">
+				<h3>Выйти на главный экран ?</h3>
+			</div>
+			<div class="pop-up__menu">
+				<a href="../index.html">Да</a>
+				<a id="pop-up__no" href="#">Нет</a>
+			</div>
+		</div>
+	</div>
+	<div class="first-screen hidden opacity ">
+		<div class="bg-pick  first">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+		<div class="end-top__text">
+			<h1>Правильных ответов</h1>
+			<h3><span id="fin-result"></span> из <span id="fin-result__all"></span></h3>
+		</div>
+
+		<div class="down-text">
+				 <a href="menu.html">вернуться в меню</a>
+		</div>
+	</div>
+	<div class="fo-screen">
+		<div class="bg-pick fo">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+			<div class="game-top__text">
+				<h3>«Любопытные факты»</h3>
+				<p class="qnumber"> вопрос <span class="qnumberCount">1</span> из <span class="all-question"></span></p>
+				
+			</div>
+
+			<div id="1" class="question-btn" >
+				<p class="question-text quiz">Сколько литров воды можно сэкономить за год, если выключать воду при чистке зубов?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step1-1" name="qblock1" name="quiz" value="false">
+				    
+				    	<label for="step1-1" class="quiz"><p>100</p></label>
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer false" type="radio" id="step1-2" name="qblock1" name="quiz" value="false">
+				    
+				    	<label for="step1-2" class="quiz"><p>1000</p></label>
+				  </div>
+
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step1-3" name="qblock1" name="quiz" value="true">
+				    
+				    	<label for="step1-3" class="quiz"><p>22000</p></label>
+				  </div>
+
+				  
+
+				  <p id="help1" class="question-help quiz hidden">В среднем за 3 минуты чистки зубов уходит до 30 литров воды – это 22 000 литров в год. Если включать воду всего на 1 минуту только для того, чтобы смыть зубную пасту, можно сэкономить 15 000 литров в год.</p>
+			</div>
+
+			<div id="2" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Покупать биоразлагаемые пакеты — это экологично?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step2-1" name="qblock2"  value="false">
+				    
+				    	<label for="step2-1" class="quiz"><p>Да</p></label>
+				    
+				    
+				 </div>
+
+				 <div class="radio">
+				    <input class="custom-radio quiz-answer true " type="radio" id="step2-2" name="qblock2"  value="true">
+				    
+				    	<label for="step2-2" class="quiz"><p>Нет</p></label>
+				    
+				    
+				 </div>
+
+				 <div class="radio">
+				    <input class="custom-radio quiz-answer true " type="radio" id="step2-3" name="qblock2"  value="true">
+				    
+				    	<label for="step2-3" class="quiz"><p>Не всегда</p></label>
+				    
+				    
+				 </div>
+				 	
+				  
+
+				  <p id="help2" class="question-help quiz hidden">Разложится ли биоразлагаемый пакеты зависит от состава материала и правильно ли он утилизирован. Оксоразлагаемые пластики со специальной добавкой d2w не исчезают бесследно: они распадаются на микропластик. Их нельзя считать экологичными. Пластики на основе натурального сырья (например, крахмала) разлагаются в условиях компостирования. Если выбрасывать такой пакет в мусорку, он будет лежать на свалке, как и обычный пластик. Вы можете отправить такой пакет в компостную яму, но лучше использовать многоразовые сумки или обычные пластиковые пакеты, которые можно сдать на переработку.</p>
+			</div>
+
+			<div id="3" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Что такое фудшеринг? </p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step3-1" name="qblock3" value="false">
+				    
+				    	<label for="step3-1" class="quiz"><p>Сервис, где можно сдать свою еду в аренду другим людям.</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step3-2" name="qblock3" value="true">
+				    
+				    	<label for="step3-2" class="quiz"><p>Движение по обмену продуктами с другими людьми</p></label>
+				    
+				    
+				  </div>
+
+				  
+
+				  <p id="help3" class="question-help quiz hidden">Фудшеринг — это практика распределения продуктов питания, которая помогает снижать количество органических отходов. Люди размещают объявления на онлайн-платформах и бесплатно делятся продуктами, которые не успеют использовать.</p>
+			</div>
+
+			<div id="4" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Как сделать полет на самолете экологичнее?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step4-1" name="qblock4" value="false">
+					    
+					    	<label for="step4-1" class="quiz"><p>Выбирать рейсы с пересадками</p></label>
+					</div>
+				 	
+					  <div class="radio">
+					    <input class="custom-radio quiz-answer true" type="radio" id="step4-2" name="qblock4" value="true">
+					    
+					    	<label for="step4-2" class="quiz"><p>Выбирать прямые рейсы</p></label>
+					  </div>
+
+					  <div class="radio">
+					    <input class="custom-radio quiz-answer false" type="radio" id="step4-3" name="qblock4" value="false">
+					    
+					    	<label for="step4-3" class="quiz"><p>Выбирать ночные рейсы</p></label>
+					  </div>
+
+
+				 	
+
+				  <p id="help4" class="question-help quiz hidden">Летать прямыми рейсами экологичнее, потому что больше всего выбросов парниковых газов при перелете приходится именно на взлет и посадку. Чтобы сделать полет еще экологичнее, лучше ограничиться ручной кладью: чем легче самолет, тем меньше СО2. А еще не забудьте взять многоразовые приборы, кружку и еду из дома в многоразовом контейнере, чтобы не покупать снеки в одноразовой упаковке.</p>
+			</div>
+
+			<div id="5" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Что такое экологический след товара?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step5-1" name="qblock5" value="false">
+				    
+				    	<label for="step5-1" class="quiz"><p>Объемы выбросов парниковых газов от производства</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer false" type="radio" id="step5-2" name="qblock5" value="false">
+				    <label for="step5-2" class="quiz "><p>Объемы использованной упаковки для транспортировки товара</p></label>
+				    
+				    
+				  </div>
+
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step5-3" name="qblock5" value="true">
+				    <label for="step5-3" class="quiz "><p>Cовокупная нагрузка на окружающую среду на всех стадиях жизненного цикла товара</p></label>
+				    
+				    
+				  </div>
+
+				  <p id="help5" class="question-help quiz hidden">Под жизненным циклом товара понимаются все этапы: от добычи сырья и производства, до упаковки и транспортирования. Например, бумажный пакет наносит меньше вреда при попадании в окружающую среду, чем пластиковый, но этого недостаточно, чтобы оценить весь жизненный цикл бумажного пакета. Если посмотреть на все этапы, окажется, что экологический след бумажного пакета больше пластикового: выделяется в 2 раза больше СО2, расходуется больше воды и больше энергии, а на самой стадии производства генерируется в 5 раз больше отходов. </p>
+				  
+			</div>
+
+			<div id="6" class="question-btn hidden opacity" >
+				<p class="question-text quiz">За сколько лет искусственная новогодняя ель окупает экологический след? </p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step6-1" name="qblock6" value="false">
+				    
+				    	<label for="step6-1" class="quiz"><p>За 1 год</p></label>
+				    
+				    
+				 </div>
+
+				 <div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step6-2" name="qblock6" value="false">
+				    
+				    	<label for="step6-2" class="quiz"><p>За 5 лет</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step6-3" name="qblock6" value="true">
+				    
+				    	<label for="step6-3" class="quiz"><p>За 20 лет</p></label>
+				    
+				    
+				  </div>
+
+				  
+				  <p id="help6" class="question-help quiz hidden">Если у вас нет искусственной елки дома, то лучше отдать предпочтение живой, купленной на специальном елочном базаре, а потом сдать ее на переработку. Если искусственное новогоднее дерево уже куплено, используйте его как можно дольше.</p>
+			</div>
+
+			<div id="7" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Сколько пластиковых пакетов используется в мире каждую секунду?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step7-1" name="qblock7" value="false">
+					    
+					    	<label for="step7-1" class="quiz"><p>15 000</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step7-2" name="qblock7" value="false">
+					    
+					    	<label for="step7-2" class="quiz"><p>100 000</p></label>
+					    
+					    
+					 </div>
+
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step7-3" name="qblock7" value="true">
+					    
+					    	<label for="step7-3" class="quiz"><p>160 000 </p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help7" class="question-help quiz hidden">Лучше отказываться от пакетов на кассе и брать с собой многоразовую сумку или авоську. Некоторые овощи и фрукты можно покупать без пакета, наклеивая ценник на кожуру. </p>
+			</div>
+
+			<div id="8" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Как долго человек использует пластиковый пакет?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step8-1" name="qblock8" value="false">
+					   	<label for="step8-1" class="quiz"><p>1 неделю</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step8-2" name="qblock8" value="false">
+					   	<label for="step8-2" class="quiz"><p>1 месяц</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step8-3" name="qblock8" value="true">
+					   	<label for="step8-3" class="quiz"><p>12 минут</p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help8" class="question-help quiz hidden">В среднем пластиковый пакет используют 12 минут. А потом он попадет на свалку, где будет разлагаться сотни лет. Используйте пакеты повторно, чтобы внести свой вклад в решение проблемы загрязнения окружающей среды. </p>
+			</div>
+
+			<div id="9" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Можно забирать ракушки с берега моря?  </p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step9-1" name="qblock9" value="false">
+					   	<label for="step9-1" class="quiz"><p>Да, ракушки необходимо забирать, они засоряют пляжи.  </p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step9-2" name="qblock9" value="false">
+					   	<label for="step9-2" class="quiz"><p>Ничего страшного с пляжем не случится, зато будет классный сувенир из поездки. </p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step9-3" name="qblock9" value="true">
+					   	<label for="step9-3" class="quiz"><p>Нет, это навредит морской экосистеме </p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help9" class="question-help quiz hidden">Ракушки служат домом для некоторых мелких морских животных, поэтому их не надо забирать с пляжа. А ещё они нужны, чтобы сохранять береговую линию, иначе может начаться эрозия. Пожалуйста, не уносите их с собой, а просто любуйтесь и фотографируйте..</p>
+			</div>
+
+			<div id="10" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Какие виды отходов чаще всего встречаются на пляжах? </p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step10-1" name="qblock10" value="false">
+					   	<label for="step10-1" class="quiz"><p>Кукурузные початки</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step10-2" name="qblock10" value="true">
+					   	<label for="step10-2" class="quiz"><p>Окурки</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step10-3" name="qblock10" value="false">
+					   	<label for="step10-3" class="quiz"><p>Пластиковые пакеты</p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help10" class="question-help quiz hidden">По данным исследований Greenpeace 2019 и 2020 год, >65% мусора на побережьях российских рек и морей — это пластик, преимущественно одноразовый. Сигаретные окурки находят чаще всего — они составляют >26% от общего количества найденного на берегах пластика. Фильтры сигаретных окурков содержат ацетат целлюлозы — это полимерный эфир на основе целлюлозы. Он разлагается около 20 лет и является настолько прочным, что из него делают оправы для очков. Из-за маленького размера окурки часто становятся пищей для морских обитателей.  </p>
+			</div>
+
+			<div id="11" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Что составляет большую часть мусора в Мировом океане?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step11-1" name="qblock11" name="quiz" value="false">
+					   	<label for="step11-1" class="quiz"><p>Пластиковые бутылки</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step11-2" name="qblock11" name="quiz" value="false">
+					   	<label for="step11-2" class="quiz"><p>Пластиковые пакеты</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step11-3" name="qblock11" value="true">
+					   	<label for="step11-3" class="quiz"><p>Рыболовные сети</p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help11" class="question-help quiz hidden">По данным нидерландской организации The Ocean Cleanup, рыболовные сети составляют 46% пластикового мусора в океане. Сети отрываются от рыболовных судов, а потом странствуют по волнам как призраки. Предполагают, что срок разложения пластиковой рыболовной сети — 600 лет.</p>
+			</div>
+
+			<div id="12" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Правда ли, что солнцезащитные кремы разрушают рифы? </p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step12-1" name="qblock12" value="false">
+					   	<label for="step12-1" class="quiz"><p>Конечно, нет. Это миф</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step12-2" name="qblock12" value="true">
+					   	<label for="step12-2" class="quiz"><p>Да, правда</p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help12" class="question-help quiz hidden">Да, химикаты в составе кремов приводят к обесцвечиванию и разрушению морских кораллов. Это ведет к нарушению баланса и гибели подводной экосистемы вместе с её обитателями. Более экологичная альтернатива — кремы на минеральной основе. Они содержат активные минеральные вещества, такие как диоксид титана или оксид цинка. Такие кремы работают как защитный экран: отталкивают и рассеивают УФ-лучи с поверхности кожи и отлично защищают от солнца.</p>
+			</div>
+
+			<div id="13" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Почему нельзя кормить чаек хлебом? </p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step13-1" name="qblock13" value="false">
+					   	<label for="step13-1" class="quiz"><p>Чайки склонны к перееданию</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step13-2" name="qblock13" value="true">
+					   	<label for="step13-2" class="quiz"><p>Хлеб и мучные изделия вредны для любых птиц</p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help13" class="question-help quiz hidden">Прикорм человеческой пищей приводит к проблемам пищеварения и к гибели животного, потому что у него отпадает необходимость в охоте и жизненно важные навыки добычи пропитания забываются. Рацион чаек состоит из рыбы, рачков и мелких животных. Если чайки питаются остатками еды со свалок, это не значит, что для них это полезно — это вынужденная мера и легкий способ утолить голод. </p>
+			</div>
+
+			<div id="14" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Кто очищает океан от мусора?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step14-1" name="qblock14" value="false">
+					   	<label for="step14-1" class="quiz"><p>Кораллы</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step14-2" name="qblock14" value="false">
+					   	<label for="step14-2" class="quiz"><p>Океан самоочищается</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step14-3" name="qblock14" value="true">
+					   	<label for="step14-3" class="quiz"><p>Общественные организации в партнерстве с бизнесом и государственными органами</p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help14" class="question-help quiz hidden">Проекты по очищению океана появляются по всему миру: их запускают общественные организации в сотрудничестве с бизнесом и государственными органами. Например, с июля 2019 года организация The Ocean Cleanup очищает Большое Тихоокеанское мусорное пятно от пластикового мусора, используя специально придуманные «плавучие ловушки». 
+					В 2021 году The Coca-Cola Company и проект The Ocean Clean Up объявили о партнерстве по очистке рек, которые вносят наибольший вклад в загрязнение мирового океана.  Собранные пластиковые отходы будут использованы для производства новых бутылок.</p>
+			</div>
+
+			<div id="15" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Как вы думаете, чем занимается «Дельфа» в Краснодарском крае?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step15-1" name="qblock15" value="false">
+					   	<label for="step15-1" class="quiz"><p>Очищает побережье Краснодарского края от мусора</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step15-2" name="qblock15" value="true">
+					   	<label for="step15-2" class="quiz"><p>Спасает черономорских дельфинов</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step15-3" name="qblock15" value="false">
+					   	<label for="step15-3" class="quiz"><p>Организует раздельный сбор отходов в городе</p></label>
+					    
+					    
+					 </div>
+
+				  <p id="help15" class="question-help quiz hidden">С 2017 года центр «Дельфа» помогает китообразным, пострадавшим от рыболовных сетей, и выпускают на свободу подневольных дельфинов. Дельфа проводит тренинги по оказанию помощи дельфинам в Сочи, Туапсе, Геленджике, Новороссийске, Анапе и поселке Волна. В будущем планируется создание стационарного Центра спасения в порту «Имеретинский» города Сочи.</p>
+			</div>
+
+			<div id="16" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Как вы думаете, чем занимается «Чистая Среда» в Краснодарском крае?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step16-1" name="qblock16" value="false">
+					   	<label for="step16-1" class="quiz"><p>Занимается переработкой пластика</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step16-2" name="qblock16" value="true">
+					   	<label for="step16-2" class="quiz"><p>Очищает побережье Краснодарского края от мусора</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step16-3" name="qblock16" value="true">
+					   	<label for="step16-3" class="quiz"><p>Вылавливает мусор из Черного моря</p></label>
+					    
+					    
+					 </div>
+
+					
+
+				  <p id="help16" class="question-help quiz hidden">В 2018 году сторонники и волонтеры движения «Чистая Среда» провели  самое крупное в истории  мероприятие по уборке мусора на пляжах Черноморского побережья — от Анапы до Туапсе. Сейчас Чистая Среда принимает сообщения о стихийных свалках и проводит уборки три раза в неделю.</p>
+			</div>
+
+
+			
+
+			
+
+			<div class="quiz-next">
+				<a class="quiz-next__btn" href="#" >далее</a>
+
+			</div>
+
+
+				
+			
+
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../stylelow.css?v=5">
+	
+	<script src="../js/jquery.min.js" ></script>
+	<script src="../js/script.js" defer=""></script>
+	<title>Интерактивная игра Coca-Cola</title>
+</head>
+<body>
+
+	<header class="header">
+
+		<div class="top-menu">
+			<div class="menu-btn">
+				<a href="#" class="menu-botton"></a>
+			</div>
+		</div>
+	</header>
+
+	<div id="popup" class="pop-up hidden opacity">
+		<div class="pop-up__container">
+			<!-- <a href="#" class="pop-up__cross"></a> -->
+			<div class="pop-up__text">
+				<h3>Выйти на главный экран ?</h3>
+			</div>
+			<div class="pop-up__menu">
+				<a href="../index.html">Да</a>
+				<a id="pop-up__no" href="#">Нет</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="first-screen hidden opacity">
+		<div class="bg-pick  first">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+		<div class="end-top__text">
+			<h1>Правильных ответов</h1>
+			<h3><span id="fin-result"></span> из <span id="fin-result__all"></span></h3>
+		</div>
+
+		<div class="down-text">
+				 <a href="scenmenu.html">вернуться в меню</a>
+		</div>
+	</div>
+
+	<div class="fo-screen">
+		<div class="bg-pick fo">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+			<div class="game-top__text">
+				<h3>Едем в путешествие</h3>
+				<p class="qnumber"> вопрос <span class="qnumberCount">1</span> из <span class="all-question"></span></p>
+				
+			</div>
+
+			<div id="1" class="question-btn" >
+				<p class="question-text">Вы планируете отправиться в путешествие в соседний регион. Какой транспорт вы выберете?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step1-1" name="qblock1" value="false">
+				    <label for="step1-1"><p>Самолет</p></label>
+				 </div>
+				 	<p id="help1" class="question-help hidden">Самолёт — один из самых неэкологичных видов транспорта. Если есть возможность, лучше поехать на поезде</p>
+				 	<p id="help-pos1" class="question-help hidden">Отличный выбор! Самолёт — один из самых неэкологичных видов транспорта. Если есть возможность, лучше поехать на поезде</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec"  type="radio" id="step1-2" name="qblock1" value="true">
+				    <label for="step1-2"><p>Поезд</p></label>
+				  </div>
+
+			</div>
+
+			<div id="2" class="question-btn hidden opacity" >
+				<p class="question-text">Что возьмёте с собой в поездку?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step2-1" name="qblock2" value="false">
+				    <label class="small-text" for="step2-1"><p>Несколько комплектов одежды, 5 пар обуви, фен, косметику... И ещё пару книг, чтобы почитать в дороге</p></label>
+				 </div>
+				 	<p id="help2" class="question-help hidden">В поездке на счету каждый килограмм. Чем больше багажа вы с собой берёте, тем больше выбросов углерода создаёт транспорт. Берите с собой только самое необходимое</p>
+				 	<p id="help-pos2" class="question-help hidden">Отличный выбор! Чем больше багажа вы с собой берёте, тем больше выбросов углерода создаёт транспорт</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step2-2" name="qblock2" value="true">
+				    <label for="step2-2"><p>Возьму только необходимое и полечу налегке</p></label>
+				  </div>
+
+			</div>
+
+			<div id="3" class="question-btn hidden opacity" >
+				<p class="question-text">Может быть, составите список перед тем, как начать складывать вещи?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step3-1" name="qblock3" value="true">
+				    <label for="step3-1"><p>Хорошая идея!</p></label>
+				 </div>
+				 	<p id="help3" class="question-help hidden">Список помогает не забыть нужные вещи, которые придется купить в поездке, хотя у вас они уже есть</p>
+				 	<p id="help-pos3" class="question-help hidden">Именно так! Список помогает не забыть нужные вещи, которые придется купить в поездке, хотя у вас они уже есть</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step3-2" name="qblock3" value="false">
+				    <label for="step3-2"><p>Соберусь без списка</p></label>
+				  </div>
+
+			</div>
+
+			<div id="4" class="question-btn hidden opacity" >
+				<p class="question-text">Пора регистрироваться на рейс. В каком виде возьмёте с собой посадочные талон?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step4-1" name="qblock4" value="true">
+				    <label for="step4-1"><p>Сохраню на телефон</p></label>
+				 </div>
+				 	<p id="help4" class="question-help hidden">Электронный посадочный талон экологичнее бумажного, однако лучше уточнить у авиакомпании, будет ли принят электронный билет</p>
+				 	<p id="help-pos4" class="question-help hidden">Электронный посадочный талон экологичнее бумажного, однако лучше уточнить у авиакомпании, будет ли принят электронный билет</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step4-2" name="qblock4" value="false">
+				    <label for="step4-2"><p>На всякий случай распечатаю</p></label>
+				  </div>
+
+			</div>
+
+			<div id="5" class="question-btn hidden opacity" >
+				<p class="question-text">Отключите телевизор, микроволновку и другую бытовую технику перед отъездом?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step5-1" name="qblock5" value="true">
+				    <label for="step5-1"><p>Обязательно</p></label>
+				 </div>
+				 	<p id="help5" class="question-help hidden">Лучше выбирать местные продукты, потому что их углеродный след ниже, чем у импортных</p>
+				 	<p id="help-pos5" class="question-help hidden">Правильный выбор: так вы сэкономите электроэнергию, которую приборы продолжают потреблять даже в спящем режиме</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step5-2" name="qblock5" value="false">
+				    <label for="step5-2"><p>Оставлю включённым в розетку</p> </label>
+				  </div>
+
+			</div>
+
+			<div id="6" class="question-btn hidden opacity" >
+				<p class="question-text">Вы прилетели в место назначения. Возьмёте машину напрокат?</p>
+				<div class="radio">
+				    <input class="custom-radio false score" type="radio" id="step6-1" name="qblock6" value="false">
+				    <label for="step6-1"><p>Возьму</p></label>
+				 </div>
+				 	<p id="help6" class="question-help hidden">Автотранспорт — один из главных неприродных источников выбросов в атмосферу. Лучше пользоваться общественным транспортом</p>
+				 	<p id="help-pos6" class="question-help hidden">Это экологично, ведь личный автотранспорт — один из главных источников выбросов в атмосферу</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step6-2" name="qblock6" value="true">
+				    <label for="step6-2"><p>Буду пользоваться общественным транспортом</p></label>
+				  </div>
+
+			</div>
+
+			<div id="7" class="question-btn hidden opacity" >
+				<p class="question-text ">Вы заселились в отель и обнаружили, что в нём не разделяют отходы. Ваши действия:</p>
+				<div class="radio">
+				    <input class="custom-radio false score " type="radio" id="step7-1" name="qblock7" value="false">
+				    <label for="step7-1"><p>Буду выбрасывать отходы в отеле</p></label>
+				 </div>
+				 	<p id="help7" class="question-help hidden">Лучше поискать способ сдать отходы на переработку: например, найти ближайший пункт приёма</p>
+				 	<p id="help-pos7" class="question-help hidden">Это экологичный выбор</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step7-2" name="qblock7" value="true">
+				    <label class="small-text"for="step7-2"><p>Накоплю полезные отходы и отнесу их в ближайший пункт приёма перед отъездом</p></label>
+				  </div>
+
+			</div>
+
+			<div id="8" class="question-btn hidden opacity" >
+				<p class="question-text">Попросите поменять полотенца после первой ночи в отеле?</p>
+				<div class="radio">
+				    <input class="custom-radio false score " type="radio" id="step8-1" name="qblock8" value="false">
+				    <label for="step8-1"><p>Да</p></label>
+				 </div>
+				 	<p id="help8" class="question-help hidden">На ежедневную стирку белья и полотенец в отелях тратится много воды и электроэнергии. Вы не стираете полотенца дома каждый день — зачем делать это в поездке?</p>
+				 	<p id="help-pos8" class="question-help hidden">Это экологичный выбор, ведь на ежедневную стирку белья и полотенец в отелях тратится много воды и электроэнергии</p>
+				  <div class="radio">
+				    <input class="custom-radio true sec" type="radio" id="step8-2" name="qblock8" value="true">
+				    <label  for="step8-2"><p>Нет</p></label>
+				  </div>
+
+			</div>
+
+			<div id="9" class="question-btn hidden opacity" >
+				<p class="question-text">Вы отправились на прогулку в горы. Как проложите свой маршрут?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step9-1" name="qblock9" value="true">
+				    <label  for="step9-1"><p>Буду следовать проложенным тропам</p></label>
+				 </div>
+				 	<p id="help9" class="question-help hidden">Экологичнее придерживаться проложенных троп, чтобы не создавать дополнительную нагрузку на природный ландшафт</p>
+				 	<p id="help-pos9" class="question-help hidden">Следуя тропам, вы не создадите дополнительную нагрузку на природный ландшафт</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step9-2" name="qblock9" value="false">
+				    <label class="small-text"for="step9-2"><p>Буду отклоняться от маршрута, чтобы посмотреть неисследованные места</p></label>
+				  </div>
+
+			</div>
+
+			<div id="10" class="question-btn hidden opacity" >
+				<p class="question-text">Путешествие пролетело очень быстро и пора домой. Возьмёте с собой неиспользованные остатки шампуня и мыла из отеля?</p>
+				<div class="radio">
+				    <input class="custom-radio true score" type="radio" id="step10-1" name="qblock10" value="true">
+				    <label  for="step10-1"><p>Да</p></label>
+				 </div>
+				 	<p id="help10" class="question-help hidden">В отелях обычно выбрасывают неиспользованные остатки шампуня и мыла, поэтому лучше забрать их с собой и использовать до конца</p>
+				 	<p id="help-pos10" class="question-help hidden"> Практично и экологично! В отелях обычно выбрасывают неиспользованные остатки шампуня и мыла</p>
+				  <div class="radio">
+				    <input class="custom-radio false sec" type="radio" id="step10-2" name="qblock10" value="false">
+				    <label for="step10-2"><p>Нет</p> </label>
+				  </div>
+
+			</div>
+
+
+
+			<div class="game-panel">
+				<div class="game-btn">
+					<img class="game-arrow" src="../img/games-img/gamecircl.png" alt="оложительный круг">
+					<img class="face-icon" src="../img/games-img/good-face.png" alt="Лицо">
+				</div>
+
+				<a class="next-btn" href="#" >далее</a>
+			</div>
+
+		
+	</div>
+</body>
+</html>

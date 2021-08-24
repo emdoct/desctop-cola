@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../stylelow.css?v=5">
+	
+	<script src="../js/jquery.min.js" ></script>
+	<script src="../js/script.js" defer=""></script>
+	<title>Интерактивная игра Coca-Cola</title>
+</head>
+<body>
+
+	<header class="header">
+
+		<div class="top-menu">
+			<div class="menu-btn">
+				<a href="#" class="menu-botton"></a>
+			</div>
+		</div>
+	</header>
+
+	<div id="popup" class="pop-up hidden opacity">
+		<div class="pop-up__container">
+			<!-- <a href="#" class="pop-up__cross"></a> -->
+			<div class="pop-up__text">
+				<h3>Выйти на главный экран ?</h3>
+			</div>
+			<div class="pop-up__menu">
+				<a href="../index.html">Да</a>
+				<a id="pop-up__no" href="#">Нет</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="first-screen hidden opacity">
+		<div class="bg-pick  first">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+		<div class="end-top__text">
+			<h1>Правильных ответов</h1>
+			<h3><span id="fin-result"></span> из <span id="fin-result__all"></span></h3>
+		</div>
+
+		<div class="down-text">
+				 <a href="menu.html">вернуться в меню</a>
+		</div>
+	</div>
+
+	<div class="fo-screen">
+		<div class="bg-pick fo">
+			<picture>
+					<source media="(max-width: 500px)" srcset="../img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="../img/webp/fo-bgnew800.webp">
+					
+					<source srcset="../img/webp/fo-bgnew.webp">
+					<img src="../img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+			<div class="game-top__text">
+				<h3>«Экологические инициативы <br>Сoca-Cola»</h3>
+				<p class="qnumber"> вопрос <span class="qnumberCount">1</span> из <span class="all-question"></span></p>
+				
+			</div>
+
+			<div id="1" class="question-btn" >
+				<p class="question-text quiz">Что такое проект «Разделяй с нами»? </p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step1-1" name="qblock1" value="false">
+				    
+				    	<label for="step1-1" class="quiz"><p>Развлекательное шоу на ТВ</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step1-2" name="qblock1" value="true">
+				    
+				    	<label for="step1-2" class="quiz"><p>Это часть глобальной стратегии Coca-Cola по созданию мира без отходов</p></label>
+				    
+				    
+				  </div>
+
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer false" type="radio" id="step1-3" name="qblock1" value="false">
+				    
+				    	<label for="step1-3" class="quiz"><p>Конкурс по сортировке отходов для школьников</p></label>
+				    
+				    
+				  </div>
+
+				  
+
+				  <p id="help1" class="question-help quiz hidden">В рамках проекта «Разделяй с нами» Coca-Cola в России развивает культуру раздельного сбора отходов по двум направлениям: устанавливает инфраструктуру для раздельного сбора отходов и запускает просветительские программы, уроки и конкурсы для привлечения населения к сортировке отходов.</p>
+			</div>
+
+			
+
+			<div id="2" class="question-btn hidden opacity" >
+				<p class="question-text quiz">В каком году Coca-Cola запустила программу «Разделяй с нами»?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step2-1" name="qblock2" value="false">
+				    
+				    	<label for="step2-1" class="quiz"><p>1916</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step2-2" name="qblock2" value="true">
+				    
+				    	<label for="step2-2" class="quiz"><p>2016</p></label>
+				    
+				    
+				  </div>
+
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer false" type="radio" id="step2-3" name="qblock2" value="false">
+				    
+				    	<label for="step2-3" class="quiz"><p>2021</p></label>
+				    
+				    
+				  </div>
+
+				  <p id="help2" class="question-help quiz hidden"></p>
+			</div>
+
+			<div id="3" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Сколько полезных отходов Coca-Cola отправила на переработку с 2016 года?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step3-1" name="qblock3" value="false">
+				    
+				    	<label for="step3-1" class="quiz"><p>10 000 тонн</p></label>
+				    
+				    
+				 </div>
+
+				 <div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step3-2" name="qblock3" value="false">
+				    
+				    	<label for="step3-2" class="quiz"><p>50 000 тонн</p></label>
+				    
+				    
+				 </div>	
+
+				 <div class="radio">
+				    <input class="custom-radio quiz-answer true " type="radio" id="step3-3" name="qblock3" value="true">
+				    
+				    	<label for="step3-3" class="quiz"><p>90 000 тонн</p></label>
+				    
+				    
+				 </div>
+
+				  
+
+				  <p id="help3" class="question-help quiz hidden">За все время существования ПРОЕКТА  «Разделяй с нами» собрали более 90 000 тонн отходов различной упаковки (бумаги, пластика, стекла, металла). Это стало возможным, благодаря установке 6 500 контейнеров программы в 55 населенных пунктах России.</p>
+			</div>
+
+			<div id="4" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Производит ли Coca-Cola напитки в упаковке из переработанного пластика?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step4-1" name="qblock4" value="false">
+					    
+					    	<label for="step4-1" class="quiz"><p>Нет</p></label>
+					</div>
+				 	
+					  <div class="radio">
+					    <input class="custom-radio quiz-answer true" type="radio" id="step4-2" name="qblock4" value="true">
+					    
+					    	<label for="step4-2" class="quiz"><p>Да</p></label>
+					  </div>
+
+				 	
+
+				  <p id="help4" class="question-help quiz hidden">Coca-Cola уже выпускает напитки в бутылках из 100% переработанного пластика: в ряде европейских стран, в Австрии, Румынии, Латинской Америке и других странах. В России пластиковые бутылки напитков Coca-Cola в среднем на 20% состоят из переработанного пластика.</p>
+			</div>
+
+			<div id="5" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Что Coca-Cola еще делает из переработанного пластика?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer true " type="radio" id="step5-1" name="qblock5" value="true">
+				    
+				    	<label for="step5-1" class="quiz"><p>Мебель</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step5-2" name="qblock5" value="true">
+				    <label for="step5-2" class="quiz "><p>Одежду</p></label>
+				    
+				    
+				  </div>
+
+				  <p id="help5" class="question-help quiz hidden">Совместно с партнером ГК «EcoPartners» Coca-Cola изготовила парковую мебель для Казани и Горкинско-Ометьевского леса и уличную мебель для пляжей города Новороссийска, которая на 98% из переработанного пластика. <br>
+				  Из переработанных пластиковых бутылок создали коллекцию одежды [Re]Collection совместно с Diesel и униформу для сотрудников Coca-Cola для ЧМ-2018. А в 2021 году выпущена коллекция одежды и аксессуаров из переработанного пластика, которая была создана в рамках совместной промо-кампании Coca-Cola в России и Пятёрочка.</p>
+				  
+			</div>
+
+			<div id="6" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Сколько нужно пластиковых бутылок, чтобы сделать комплект футбольной формы?</p>
+				<div class="radio">
+				    <input class="custom-radio quiz-answer false " type="radio" id="step6-1" name="qblock6" value="false">
+				    
+				    	<label for="step6-1" class="quiz"><p>100</p></label>
+				    
+				    
+				 </div>
+				 	
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer false" type="radio" id="step6-2" name="qblock6" value="false">
+				    
+				    	<label for="step6-2" class="quiz"><p>50</p></label>
+				    
+				    
+				  </div>
+
+				  <div class="radio">
+				    <input class="custom-radio quiz-answer true" type="radio" id="step6-3" name="qblock6" value="true">
+				    
+				    	<label for="step6-3" class="quiz"><p>16</p></label>
+				    
+				    
+				  </div>
+
+				  
+
+				  <p id="help6" class="question-help quiz hidden">В среднем, 16 бутылок по 2 литра. В процессе переработки из бутылок делают нити, которые затем превращают в ткань для пошива одежды.</p>
+			</div>
+
+			<div id="7" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Самая необычная бутылка Coca-Cola сделана из…</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step7-1" name="qblock7" value="false">
+					    
+					    	<label for="step7-1" class="quiz"><p>Дерева</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step7-2" name="qblock7" value="false">
+					    
+					    	<label for="step7-2" class="quiz"><p>Ткани</p></label>
+					    
+					    
+					 </div>
+
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step7-3" name="qblock7" value="true">
+					    
+					    	<label for="step7-3" class="quiz"><p>Океанического пластика</p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help7" class="question-help quiz hidden">Который собрали на 84 побережьях Испании и Португалии. В дальнейшем такие бутылки, состоящие на четверть из переработанного пластика, планируют запустить в массовое производство.</p>
+			</div>
+
+			<div id="8" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Ради сохранения какой российской реки разработан совместный проект Coca‑Cola в России и Бюро ЮНЕСКО?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step8-1" name="qblock8" value="false">
+					   	<label for="step8-1" class="quiz"><p>Ангары</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step8-2" name="qblock8" value="false">
+					   	<label for="step8-2" class="quiz"><p>Енисея</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step8-3" name="qblock8" value="true">
+					   	<label for="step8-3" class="quiz"><p>Волги</p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help8" class="question-help quiz hidden">Проект «Живая Волга» появился в 2006 году. С тех пор Coca-Cola в России ежегодно проводит природоохранные акции, экофестивали, просветительские и деловые мероприятия в ключевых городах Волжского бассейна. За 12 лет он приобрел впечатляющие масштабы: в проекте участвовали более 20 тысяч волонтеров.</p>
+			</div>
+
+			<div id="9" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Какому российскому озеру Coca-Cola в России посветила отдельный экоурок для школьников?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step9-1" name="qblock9" value="false">
+					   	<label for="step9-1" class="quiz"><p>Ладожскому</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step9-2" name="qblock9" value="false">
+					   	<label for="step9-2" class="quiz"><p>Онежскому</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step9-3" name="qblock9" value="true">
+					   	<label for="step9-3" class="quiz"><p>Байкалу</p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help9" class="question-help quiz hidden">При поддержке фонда ЭРА и Движения ЭКА компания создала серию уроков о самом большом пресноводном озере в мире. В рамках проекта «За чистое будущее озера Байкал» проводили акции по очистке берегов Байкала — и со стороны Иркутской области, и со стороны Бурятии. В ней участвовали более 10 тысяч волонтеров.</p>
+			</div>
+
+			
+			<div id="10" class="question-btn hidden opacity" >
+				<p class="question-text quiz">Когда во всем мире празднуют день Черного моря?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step10-1" name="qblock10" value="true">
+					   	<label for="step10-1" class="quiz"><p>31 октября</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step10-2" name="qblock10" value="false">
+					   	<label for="step10-2" class="quiz"><p>31 августа </p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step10-3" name="qblock10" value="false">
+					   	<label for="step10-3" class="quiz"><p>31 декабря </p></label>
+					    
+					    
+					 </div>
+
+					 
+				 	
+				  
+
+				  <p id="help10" class="question-help quiz hidden">В честь праздника Coca-Cola в России проводит субботники в прибрежных городах — Сочи, Анапе, Новороссийске, Геленджике — и вместе с администрацией городов и волонтерами убирает побережье Черного моря и впадающих в него рек.</p>
+			</div>
+
+			<div id="11" class="question-btn quiz hidden opacity" >
+				<p class="question-text quiz">В каком российском городе Coca-Cola в России реализует программу «Город без отходов»?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step11-1" name="qblock11" value="false">
+					   	<label for="step11-1" class="quiz"><p>В Москве</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step11-2" name="qblock11" value="false">
+					   	<label for="step11-2" class="quiz"><p>В Сочи</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step11-3" name="qblock11" value="true">
+					   	<label for="step11-3" class="quiz"><p>В Казани</p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help11" class="question-help quiz hidden">Правительство Республики Татарстан и Coca-Cola в России подписали соглашение о развитии культуры и практики раздельного сбора отходов. При поддержке компании «ЭкоТехнологии» 500 контейнеров для сбора отходов установили в казанских дворах, еще 270 контейнеров появились в городских парках, где также появилась мебель из переработанного пластика и интерактивная экспозиция о бережном отношении к природе.</p>
+			</div>
+
+			<div id="12" class="question-btn quiz hidden opacity" >
+				<p class="question-text quiz">Как звучит самый смелый рекламный слоган Coca-Cola?</p>
+					<div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step12-1" name="qblock12" value="false">
+					   	<label for="step12-1" class="quiz"><p>Если вам встретился указатель, подумайте о Coca-Cola</p></label>
+					    
+					    
+					 </div>
+
+					 
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer false " type="radio" id="step12-2" name="qblock12" value="false">
+					   	<label for="step12-2" class="quiz"><p>Всегда Coca-Cola</p></label>
+					    
+					    
+					 </div>
+
+					 <div class="radio">
+					    <input class="custom-radio quiz-answer true " type="radio" id="step12-3" name="qblock12" value="true">
+					   	<label for="step12-3" class="quiz"><p>Не покупайте Coca-Cola, если не поможете нам с переработкой</p></label>
+					    
+					    
+					 </div>
+				 	
+				  
+
+				  <p id="help12" class="question-help quiz hidden">Don't buy Coca-Cola if you don't help us recycle. Такую рекламную кампанию запустили в Бельгии в 2019 году, чтобы привлечь внимание к проблеме правильного обращения с отходами.</p>
+			</div>
+
+			<div class="quiz-next">
+				<a class="quiz-next__btn" href="#" >далее</a>
+
+			</div>
+
+
+				
+			
+
+		
+	</div>
+</body>
+</html>

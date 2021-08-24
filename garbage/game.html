@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+      iframe {
+        border: none;
+        margin: none;
+        padding: none;
+      }
+
+      #center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img id="home" src="images/home.png" onclick="location.href = '/'" />
+    <iframe id="game" width="100%" height="100%"> </iframe>
+
+    <script>
+      const levels = {
+        paper: 20,
+        metal: 14,
+        plastic: 15,
+        devices: 5,
+      };
+      let levelsInfo = {};
+      let params = new URL(document.location).searchParams;
+      let level = params.get("level");
+      let current = 0;
+      let frame = document.getElementById("game");
+      let points = 0;
+
+      window.addEventListener("message", (e) => {
+        if (e.data.type == "dropped") {
+          if (e.data.isCorrect) {
+            points += 1;
+          }
+
+          frame.src = `template2.html?level=${level}&stage=${current}&rec=${rec}`;
+        }
+
+        if (e.data.type == "next") {
+          current += 1;
+
+          if (current != levels[level]) {
+            loadGame();
+          } else {
+            location.href = `results.html?maximum=${levels[level]}&points=${points}&level=${level}`;
+          }
+        }
+      });
+
+      const loadGame = () => {
+        rec = levelsInfo[level][current].recyclable.toString();
+        frame.src = `template1.html?level=${level}&stage=${current}&rec=${rec}`;
+      };
+
+      fetch("data/levels.json")
+        .then((res) => res.json())
+        .then((levelsA) => {
+          levelsInfo = levelsA;
+
+          loadGame();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="stylelow.css?v=5">
+	<title>Интерактивная игра Coca-Cola</title>
+	<script src="js/jquery.min.js" ></script>
+	<script src="js/script.js " defer=""></script>
+</head>
+<body>
+
+	<header class="header">
+		<div class="top-menu">
+			<div class="menu-btn">
+				<a href="#" class="menu-botton"></a>
+			</div>
+		</div>
+	</header>
+	<div id="popup" class="pop-up hidden opacity">
+		<div class="pop-up__container">
+			<!-- <a href="#" class="pop-up__cross"></a> -->
+			<div class="pop-up__text">
+				<h3>Выйти на главный экран ?</h3>
+			</div>
+			<div class="pop-up__menu">
+				<a href="index.html">Да</a>
+				<a id="pop-up__no" href="#">Нет</a>
+			</div>
+		</div>
+	</div>
+	<div class="fo-screen">
+		<div class="bg-pick fo">
+			<picture>
+					<source media="(max-width: 500px)" srcset="img/webp/fo-bgnew500.webp">
+					<source media="(max-width: 800px)" srcset="img/webp/fo-bgnew800.webp">
+					
+					<source srcset="img/webp/fo-bgnew.webp">
+					<img src="img/bg/fo-bgnew.png" alt="картина первого экрана">
+				</picture>
+			
+		</div>
+
+		<div class="top-text sec">
+			<h3>Выберите</h3> <h3>игру</h3>
+		</div>
+
+		<div class="main-menu sec">
+			<a href="garbage/index.html" class="second-btn"></a>
+			<a href="resize/menu.html" class="second-btn"></a>
+			<a href="resize/scenmenu.html" class="second-btn"></a>
+			<a href="resize/garbagemark.html" class="second-btn"></a>
+		</div>
+	</div>
+</body>
+</html>
