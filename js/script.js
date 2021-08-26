@@ -260,6 +260,8 @@ $(function(){
 				// добавление балла
 				}
 
+				$('input[type=radio]').prop('checked', false);
+
 			});
 
 			
