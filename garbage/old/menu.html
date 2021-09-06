@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      h1 {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: bold;
+        font-size: calc(70 / 1920 * 100vh);
+        line-height: calc(78 / 1920 * 100vh);
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #fd2134;
+        width: 100%;
+
+        margin-bottom: calc(100 / 1920 * 100vh);
+
+        max-width: calc(919 / 1920 * 100vh);
+      }
+
+      p {
+        width: 100%;
+        padding: 0 calc(150 / 1920 * 100vh);
+        text-align: center;
+
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calc(60 / 1920 * 100vh);
+        line-height: calc(65 / 1920 * 100vh);
+
+        margin-bottom: calc(200 / 1920 * 100vh);
+
+        max-width: calc(919 / 1920 * 100vh);
+      }
+
+      #column {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <img id="home" src="images/home.png" onclick="location.href = '/'" />
+    <div id="column">
+      <h1 id="lvl"></h1>
+      <script>
+        const params = new URLSearchParams(window.location.search);
+        const levels = {
+          paper: "СОРТИРУЕМ БУМАГУ",
+          metal: "СОРТИРУЕМ СТЕКЛО, МЕТАЛЛ, ТЕТРАПАК",
+          plastic: "СОРТИРУЕМ пластик",
+          devices: " СОРТИРУЕМ ОПАСНЫЕ ОТХОДЫ",
+        };
+
+        document.getElementById(
+          "lvl"
+        ).innerHTML = `Вы прошли уровень <br /> ${levels[params.get("level")]}`;
+      </script>
+      <p>
+        Желаете вернуться в главное меню и выбрать другой уровень или завершить
+        сессию?
+      </p>
+      <button id="menu" onclick="location.href = 'index.html'">завершить</button>
+    </div>
+  </body>
+</html>

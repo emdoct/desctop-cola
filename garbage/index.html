@@ -10,22 +10,22 @@
         font-family: Comfortaa;
         font-style: normal;
         font-weight: bold;
-        font-size: calc(70 / 1920 * 100vh);
-        line-height: calc(78 / 1920 * 100vh);
+        font-size: calc(70 / 1920 * 100vh * var(--mobile-fix));
+        line-height: calc(78 / 1920 * 100vh * var(--mobile-fix));
 
         color: #fd2134;
         width: 100%;
         text-align: center;
 
-        margin-bottom: calc(130 / 1920 * 100vh);
+        margin-bottom: calc(130 / 1920 * 100vh * var(--mobile-fix));
       }
 
       p {
         font-family: Comfortaa;
         font-style: normal;
         font-weight: normal;
-        font-size: calc(45 / 1920 * 100vh);
-        line-height: calc(50 / 1920 * 100vh);
+        font-size: calc(45 / 1920 * 100vh * var(--mobile-fix));
+        line-height: calc(50 / 1920 * 100vh * var(--mobile-fix));
 
         text-transform: uppercase;
 
@@ -45,36 +45,38 @@
       div > a {
         display: flex;
         flex-direction: row;
-        width: calc(795 / 1920 * 100vh);
-        height: calc(304 / 1920 * 100vh);
-        padding-left: calc(102 / 1920 * 100vh);
+        width: calc(795 / 1920 * 100vh * var(--mobile-fix));
+        height: calc(304 / 1920 * 100vh * var(--mobile-fix));
+        padding-left: calc(102 / 1920 * 100vh * var(--mobile-fix));
         align-items: center;
-        border-top: calc(3 / 1920 * 100vh) solid #fd2134;
+        border-top: calc(3 / 1920 * 100vh * var(--mobile-fix)) solid #fd2134;
 
-        border-left: calc(3 / 1920 * 100vh) solid transparent;
-        border-right: calc(3 / 1920 * 100vh) solid transparent;
+        border-left: calc(3 / 1920 * 100vh * var(--mobile-fix)) solid
+          transparent;
+        border-right: calc(3 / 1920 * 100vh * var(--mobile-fix)) solid
+          transparent;
 
         text-decoration: none;
         -webkit-tap-highlight-color: transparent;
       }
 
       .img {
-        width: calc(102 / 1920 * 100vh);
-        height: calc(240 / 1920 * 100vh);
+        width: calc(102 / 1920 * 100vh * var(--mobile-fix));
+        height: calc(240 / 1920 * 100vh * var(--mobile-fix));
       }
 
       div > a:last-child {
-        border-bottom: calc(3 / 1920 * 100vh) solid #fd2134;
+        border-bottom: calc(3 / 1920 * 100vh * var(--mobile-fix)) solid #fd2134;
       }
 
       div > a:hover {
         background: #fff5f6;
-        border-left: calc(3 / 1920 * 100vh) solid #fd2134;
-        border-right: calc(3 / 1920 * 100vh) solid #fd2134;
+        border-left: calc(3 / 1920 * 100vh * var(--mobile-fix)) solid #fd2134;
+        border-right: calc(3 / 1920 * 100vh * var(--mobile-fix)) solid #fd2134;
       }
 
       div > a > p {
-        padding-left: calc(46 / 1920 * 100vh);
+        padding-left: calc(46 / 1920 * 100vh * var(--mobile-fix));
       }
 
       a.disabled {

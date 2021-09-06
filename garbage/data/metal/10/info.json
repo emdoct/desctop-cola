@@ -1,5 +1,5 @@
 {
   "name": "ФОЛЬГИРОВАННЫЙ ПАКЕТ ОТ ЧАЯ",
   "recyclable": false,
-  "text": "<p style=\"font-size:calc(94 / 1920 * 100vh)\">МУСОР</p>"
+  "text": "<p style=\"font-size:calc(94 / 1920 * 100vh * var(--mobile-fix))\">МУСОР</p>"
 }

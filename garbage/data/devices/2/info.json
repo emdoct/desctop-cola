@@ -1,5 +1,5 @@
 {
   "name": "ЛАМПЫ НАКАЛИВАНИЯ И ГАЛОГЕНОВЫЕ ЛАМПЫ",
   "recyclable": true,
-  "text": "<p style=\"font-size:calc(54 / 1920 * 100vh)\">на переработку</p>"
+  "text": "<p style=\"font-size:calc(54 / 1920 * 100vh * var(--mobile-fix))\">на переработку</p>"
 }

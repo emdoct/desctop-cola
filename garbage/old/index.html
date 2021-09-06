@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: bold;
+        font-size: calc(70 / 1920 * 100vh);
+        line-height: calc(78 / 1920 * 100vh);
+
+        color: #fd2134;
+        width: 100%;
+        text-align: center;
+
+        margin-bottom: calc(130 / 1920 * 100vh);
+      }
+
+      p {
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calc(45 / 1920 * 100vh);
+        line-height: calc(50 / 1920 * 100vh);
+
+        text-transform: uppercase;
+
+        color: #000000;
+      }
+
+      #list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+      }
+
+      div > a {
+        display: flex;
+        flex-direction: row;
+        width: calc(795 / 1920 * 100vh);
+        height: calc(304 / 1920 * 100vh);
+        padding-left: calc(102 / 1920 * 100vh);
+        align-items: center;
+        border-top: calc(3 / 1920 * 100vh) solid #fd2134;
+
+        border-left: calc(3 / 1920 * 100vh) solid transparent;
+        border-right: calc(3 / 1920 * 100vh) solid transparent;
+
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .img {
+        width: calc(102 / 1920 * 100vh);
+        height: calc(240 / 1920 * 100vh);
+      }
+
+      div > a:last-child {
+        border-bottom: calc(3 / 1920 * 100vh) solid #fd2134;
+      }
+
+      div > a:hover {
+        background: #fff5f6;
+        border-left: calc(3 / 1920 * 100vh) solid #fd2134;
+        border-right: calc(3 / 1920 * 100vh) solid #fd2134;
+      }
+
+      div > a > p {
+        padding-left: calc(46 / 1920 * 100vh);
+      }
+
+      a.disabled {
+        background: #fff5f6;
+        pointer-events: none;
+        cursor: default;
+        filter: grayscale(1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <img id="home" src="images/home.png" onclick="location.href = '/'" />
+    <div id="list">
+      <h1>Выберите уровень</h1>
+      <a id="paper" href="game.html?level=paper">
+        <img class="img" src="images/start/paper.png" />
+        <p>
+          СОРТИРУЕМ <br />
+          БУМАГУ
+        </p>
+      </a>
+      <a id="metal" href="game.html?level=metal">
+        <img class="img" src="images/start/iron.png" />
+        <p>
+          СОРТИРУЕМ <br />
+          СТЕКЛО, <br />
+          МЕТАЛЛ, ТЕТРАПАК
+        </p>
+      </a>
+      <a id="plastic" href="game.html?level=plastic">
+        <img class="img" src="images/start/plastic.png" />
+        <p>СОРТИРУЕМ пластик</p>
+      </a>
+      <a id="devices" href="game.html?level=devices">
+        <img class="img" src="images/start/devices.png" />
+        <p>СОРТИРУЕМ ОПАСНЫЕ ОТХОДЫ</p>
+      </a>
+    </div>
+  </body>
+</html>

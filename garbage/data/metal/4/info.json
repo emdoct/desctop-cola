@@ -1,5 +1,5 @@
 {
   "name": "АЛЮМИНИЕВАЯ БАНКА",
   "recyclable": true,
-  "text": "<p style=\"font-size:calc(54 / 1920 * 100vh)\">перерабатываемый металл</p>"
+  "text": "<p style=\"font-size:calc(54 / 1920 * 100vh * var(--mobile-fix))\">перерабатываемый металл</p>"
 }

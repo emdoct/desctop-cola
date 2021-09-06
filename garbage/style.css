@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
   user-select: none;
+
+  --mobile-fix: 1;
+}
+
+@media (max-width: 460px) {
+  * {
+    --mobile-fix: 0.85;
+  }
 }
 
 @font-face {
@@ -20,24 +28,26 @@ html {
   padding: 0;
   margin: 0;
   border: none;
+
+  height: 100%;
 }
 
 body {
-  border: calc(46 / 1920 * 100vh) solid #e41e2b;
+  border: calc(46 / 1920 * 100vh * var(--mobile-fix)) solid #e41e2b;
 
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 
   overflow: hidden;
 }
 
 #home {
-  width: calc(230 / 1920 * 100vh);
-  height: calc(199 / 1920 * 100vh);
+  width: calc(230 / 1920 * 100vh * var(--mobile-fix));
+  height: calc(199 / 1920 * 100vh * var(--mobile-fix));
 
   position: absolute;
   left: 50%;
-  top: calc(-15 / 1920 * 100vh);
+  top: calc(-15 / 1920 * 100vh * var(--mobile-fix));
   transform: translateX(-50%);
 }
 
@@ -49,8 +59,8 @@ h1 {
   font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(55 / 1920 * 100vh);
-  line-height: calc(61 / 1920 * 100vh);
+  font-size: calc(55 / 1920 * 100vh * var(--mobile-fix));
+  line-height: calc(61 / 1920 * 100vh * var(--mobile-fix));
   text-align: center;
   text-transform: uppercase;
   user-select: none;
@@ -74,8 +84,8 @@ img {
 }
 
 button {
-  width: calc(406.31 / 1920 * 100vh);
-  height: calc(152 / 1920 * 100vh);
+  width: calc(406.31 / 1920 * 100vh * var(--mobile-fix));
+  height: calc(152 / 1920 * 100vh * var(--mobile-fix));
   background: url(images/btn.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -84,8 +94,8 @@ button {
   font-family: Comfortaa;
   font-style: normal;
   font-weight: normal;
-  font-size: calc(40 / 1920 * 100vh);
-  line-height: calc(45 / 1920 * 100vh);
+  font-size: calc(40 / 1920 * 100vh * var(--mobile-fix));
+  line-height: calc(45 / 1920 * 100vh * var(--mobile-fix));
   text-align: center;
   text-transform: uppercase;
 

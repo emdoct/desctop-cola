@@ -14,32 +14,32 @@
         font-family: Comfortaa;
         font-style: normal;
         font-weight: bold;
-        font-size: calc(90 / 1920 * 100vh);
-        padding: 0 calc(20 / 1920 * 100vh);
-        line-height: calc(100 / 1920 * 100vh);
+        font-size: calc(90 / 1920 * 100vh * var(--mobile-fix));
+        padding: 0 calc(20 / 1920 * 100vh * var(--mobile-fix));
+        line-height: calc(100 / 1920 * 100vh * var(--mobile-fix));
         text-align: center;
         letter-spacing: 0.06em;
         text-transform: uppercase;
 
         color: #fd2134;
 
-        margin-bottom: calc(80 / 1920 * 100vh);
+        margin-bottom: calc(80 / 1920 * 100vh * var(--mobile-fix));
       }
 
       #we {
-        width: calc(538 / 1920 * 100vh);
+        width: calc(538 / 1920 * 100vh * var(--mobile-fix));
 
         font-family: Comfortaa;
         font-style: normal;
         font-weight: normal;
-        font-size: calc(60 / 1920 * 100vh);
-        line-height: calc(50 / 1920 * 100vh);
+        font-size: calc(60 / 1920 * 100vh * var(--mobile-fix));
+        line-height: calc(50 / 1920 * 100vh * var(--mobile-fix));
 
         text-align: center;
 
         color: #000000;
 
-        margin-bottom: calc(80 / 1920 * 100vh);
+        margin-bottom: calc(80 / 1920 * 100vh * var(--mobile-fix));
       }
 
       #score {
@@ -48,7 +48,7 @@
         font-family: Comfortaa;
         font-style: normal;
         font-weight: bold;
-        font-size: calc(150 / 1920 * 100vh);
+        font-size: calc(150 / 1920 * 100vh * var(--mobile-fix));
 
         text-align: center;
 
@@ -61,28 +61,28 @@
         font-family: Comfortaa;
         font-style: normal;
         font-weight: normal;
-        font-size: calc(60 / 1920 * 100vh);
-        line-height: calc(60 / 1920 * 100vh);
+        font-size: calc(60 / 1920 * 100vh * var(--mobile-fix));
+        line-height: calc(60 / 1920 * 100vh * var(--mobile-fix));
 
         text-align: center;
 
-        margin-bottom: calc(80 / 1920 * 100vh);
+        margin-bottom: calc(80 / 1920 * 100vh * var(--mobile-fix));
       }
 
       #fuck {
         width: 100%;
-        padding: 0 calc(150 / 1920 * 100vh);
+        padding: 0 calc(150 / 1920 * 100vh * var(--mobile-fix));
         text-align: center;
 
         font-family: Comfortaa;
         font-style: normal;
         font-weight: normal;
-        font-size: calc(60 / 1920 * 100vh);
-        line-height: calc(65 / 1920 * 100vh);
+        font-size: calc(60 / 1920 * 100vh * var(--mobile-fix));
+        line-height: calc(65 / 1920 * 100vh * var(--mobile-fix));
 
-        margin-bottom: calc(80 / 1920 * 100vh);
+        margin-bottom: calc(80 / 1920 * 100vh * var(--mobile-fix));
       }
-      
+
       #column {
         width: 100%;
         height: 100%;
@@ -108,11 +108,11 @@
       const params = new URLSearchParams(window.location.search);
 
       const next = () => {
-        location.href = `menu.html?level=${params.get('level')}`
+        location.href = `menu.html?level=${params.get("level")}`;
       };
 
-      document.getElementById("points").innerHTML = params.get('points');
-      document.getElementById("maximum").innerHTML = params.get('maximum');
+      document.getElementById("points").innerHTML = params.get("points");
+      document.getElementById("maximum").innerHTML = params.get("maximum");
     </script>
   </body>
 </html>

@@ -1,23 +1,23 @@
 <p id="pet">
   <img
-    width="calc(90 / 1920 * 100vh)"
-    height="calc(120 / 1920 * 100vh)"
+    width="calc(90 / 1920 * 100vh * var(--mobile-fix))"
+    height="calc(120 / 1920 * 100vh * var(--mobile-fix))"
     src="images/pet.png"
   />
   мусор*
 </p>
 <p id="pp">
   <img
-    width="calc(90 / 1920 * 100vh)"
-    height="calc(120 / 1920 * 100vh)"
+    width="calc(90 / 1920 * 100vh * var(--mobile-fix))"
+    height="calc(120 / 1920 * 100vh * var(--mobile-fix))"
     src="images/pp.png"
   />
   на переработку, если принимают в пункте
 </p>
 <p id="ps">
   <img
-    width="calc(90 / 1920 * 100vh)"
-    height="calc(120 / 1920 * 100vh)"
+    width="calc(90 / 1920 * 100vh * var(--mobile-fix))"
+    height="calc(120 / 1920 * 100vh * var(--mobile-fix))"
     src="images/ps.png"
   />
   на переработку, если принимают в пункте
@@ -28,33 +28,33 @@
 </p>
 <style>
   #pet {
-    font-size: calc(50 / 1920 * 100vh) !important;
-    line-height: calc(60 / 1920 * 100vh) !important;
+    font-size: calc(50 / 1920 * 100vh * var(--mobile-fix)) !important;
+    line-height: calc(60 / 1920 * 100vh * var(--mobile-fix)) !important;
     color: #d11c23 !important;
     display: flex;
     align-items: center;
   }
 
   img {
-    margin-right: calc(40 / 1920 * 100vh);
+    margin-right: calc(40 / 1920 * 100vh * var(--mobile-fix));
     flex-shrink: 0;
   }
 
   #pp,
   #ps {
-    font-size: calc(50 / 1920 * 100vh) !important;
-    line-height: calc(60 / 1920 * 100vh) !important;
+    font-size: calc(50 / 1920 * 100vh * var(--mobile-fix)) !important;
+    line-height: calc(60 / 1920 * 100vh * var(--mobile-fix)) !important;
     color: #000000 !important;
     display: flex;
     align-items: center;
     text-align: left !important;
-    margin-top: calc(15 / 1920 * 100vh);
+    margin-top: calc(15 / 1920 * 100vh * var(--mobile-fix));
   }
 
   #nano {
-    font-size: calc(25 / 1920 * 100vh) !important;
-    line-height: calc(25 / 1920 * 100vh) !important;
+    font-size: calc(25 / 1920 * 100vh * var(--mobile-fix)) !important;
+    line-height: calc(25 / 1920 * 100vh * var(--mobile-fix)) !important;
     color: #000000 !important;
-    margin-top: calc(15 / 1920 * 100vh);
+    margin-top: calc(15 / 1920 * 100vh * var(--mobile-fix));
   }
 </style>
